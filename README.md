@@ -40,3 +40,19 @@ BenchmarkConjunctionSingle-16    	   19837	    287302 ns/op
 PASS
 ok  	github.com/harpratap/cue-perf-tests	25.784s
 ```
+
+## 3. Openness
+
+Definitions are by default closed, but adding ellipses `...` will open them. When importing OpenAPI spec to CUE it defaults to open definitions, which will cause export times to slow down
+
+```
+go test -bench=BenchmarkDefinition
+goos: darwin
+goarch: amd64
+pkg: github.com/harpratap/cue-perf-tests
+cpu: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
+BenchmarkDefinitionOpen-16      	    1404	    800391 ns/op
+BenchmarkDefinitionClosed-16    	    1635	    770721 ns/op
+PASS
+ok  	github.com/harpratap/cue-perf-tests	3.130s
+```
