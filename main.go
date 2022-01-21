@@ -7,4 +7,6 @@ func main() {
 	listComprehensionShort10()
 	conjunctionSingle()
 	conjunctionDouble()
+	definitionOpen()
+	defintionClosed()
 }
