@@ -9,4 +9,6 @@ func main() {
 	conjunctionDouble()
 	definitionOpen()
 	defintionClosed()
+	default0()
+	default10()
 }

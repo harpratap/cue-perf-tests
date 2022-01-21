@@ -56,3 +56,19 @@ BenchmarkDefinitionClosed-16    	    1635	    770721 ns/op
 PASS
 ok  	github.com/harpratap/cue-perf-tests	3.130s
 ```
+
+## 4. Defaulting
+
+Defaulting allows to provide a value to a type which can be overridden but only once. Adding more defaults also cause slowness
+
+```
+go test -bench=BenchmarkDefault -benchtime=5s
+goos: darwin
+goarch: amd64
+pkg: github.com/harpratap/cue-perf-tests
+cpu: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
+BenchmarkDefault0-16     	   41304	    144890 ns/op
+BenchmarkDefault10-16    	   30867	    197449 ns/op
+PASS
+ok  	github.com/harpratap/cue-perf-tests	20.813s
+```
