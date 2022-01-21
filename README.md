@@ -24,3 +24,19 @@ BenchmarkListComprehensionShort1-16     	  110869	     55206 ns/op
 PASS
 ok  	github.com/harpratap/cue-perf-tests	33.884s
 ```
+
+## 2. Conjunctions
+
+Conjunctions are like AND operators used for specifying multiple constraints. But using too many constraints slows down the export timings too. Meaning `#level1 & { text1: text2: "hello" }` is less costly than `#level1 & { text1: #level2 & { text2: "hello" }` even though both behave exactly the same.
+
+```
+go test -bench=BenchmarkConjunction -benchtime=5s
+goos: darwin
+goarch: amd64
+pkg: github.com/harpratap/cue-perf-tests
+cpu: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
+BenchmarkConjunctionDouble-16    	   17859	    335044 ns/op
+BenchmarkConjunctionSingle-16    	   19837	    287302 ns/op
+PASS
+ok  	github.com/harpratap/cue-perf-tests	25.784s
+```
