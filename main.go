@@ -5,4 +5,6 @@ func main() {
 	listComprehensionLong1()
 	listComprehensionShort10()
 	listComprehensionShort10()
+	conjunctionSingle()
+	conjunctionDouble()
 }
